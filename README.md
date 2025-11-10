@@ -3,12 +3,8 @@
 A simple, modern HL7 version 2.x message parser and visualizer for the web.  
 Parse, explore, and understand HL7 messages with full segment/field linking and field descriptions—all in your browser, no backend required.
 
-## Demo
-
-You can view or host this app directly with [GitHub Pages](https://pages.github.com/)!
-
-**Live demo (if you've published):**  
-`https://YOUR_GITHUB_USERNAME.github.io/hl7_parser/index.html`
+**Live demo:**  
+[HL7 Parser](https://chaitanyabhasme.github.io/hl7_parser/index.html)
 
 ## How to Use
 
