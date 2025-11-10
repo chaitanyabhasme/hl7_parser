@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chaitanyabhasme.github.io/hl7_parser/sitemap.xml

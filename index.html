@@ -2,7 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>HL7 Message Parser</title>
+  <title>HL7 v2.x Message Parser & Visualizer | Free Online HL7 Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free online HL7 v2.x message parser and visualizer. Paste HL7, parse segments and fields, and explore field descriptions. Runs in the browser—no signup." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://chaitanyabhasme.github.io/hl7_parser/" />
+  <meta name="theme-color" content="#4f46e5" />
+  <meta name="author" content="Chaitanya Bhasme" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HL7 v2.x Message Parser & Visualizer" />
+  <meta property="og:description" content="Free online HL7 message parser. Explore segments and fields with descriptions. Works entirely in your browser." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chaitanyabhasme.github.io/hl7_parser/" />
+  <meta property="og:site_name" content="HL7 Parser" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="HL7 v2.x Message Parser & Visualizer" />
+  <meta name="twitter:description" content="Parse and visualize HL7 v2.x messages with detailed field definitions." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <!-- Inline SVG favicon fallback (in case file not available) -->
+  <link rel="icon" sizes="any" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' role='img' aria-label='HL7 Parser Icon' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%234f46e5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial' font-size='26' fill='%23fff' font-weight='700'%3EHL7%3C/text%3E%3C/svg%3E" />
+
+  <!-- Preconnects for performance -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+  <link rel="preconnect" href="https://unpkg.com" crossorigin />
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- HL7 Field/Segment Descriptions (externalized) -->
@@ -14,9 +43,64 @@
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
   <!-- Babel Standalone CDN for JSX support -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "HL7 v2.x Message Parser & Visualizer",
+    "url": "https://chaitanyabhasme.github.io/hl7_parser/",
+    "description": "Free online HL7 v2.x message parser and visualizer to explore segments, fields, and definitions.",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "softwareVersion": "1.0.0"
+  }
+  </script>
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is HL7 v2.x?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HL7 v2.x is a healthcare messaging standard used to exchange clinical and administrative data between systems like EHRs, labs, and billing platforms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this tool send my data to a server?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The HL7 parser runs entirely in your browser. Your message is processed locally and never leaves your device."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which HL7 messages are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The parser supports common HL7 v2.x messages such as ADT, ORU, ORM, and others, with human-friendly segment and field descriptions."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
   <div id="root"></div>
+  <noscript>
+    <p>HL7 v2.x Message Parser & Visualizer: This tool requires JavaScript to run. Enable JavaScript to parse and visualize HL7 messages in your browser. Project: https://chaitanyabhasme.github.io/hl7_parser/</p>
+  </noscript>
   <script type="text/babel">
     const { useState } = React;
 
@@ -176,9 +260,9 @@ PV1|1|I|ICU^101^A|||||||SUR||||||||S|||||||||||||||||||||||||20231015`;
             <div className="text-center mb-8">
               <div className="flex items-center justify-center gap-3 mb-2">
                 <Lucide name="file-text" className="lucide w-10 h-10 text-indigo-600" />
-                <h1 className="text-4xl font-bold text-gray-800">HL7 Message Parser</h1>
+                <h1 className="text-4xl font-bold text-gray-800">HL7 v2.x Message Parser & Visualizer (Online)</h1>
               </div>
-              <p className="text-gray-600">Parse and visualize HL7 v2.x messages with detailed field definitions</p>
+              <p className="text-gray-600">Free, client-side HL7 v2.x parser and viewer. Paste HL7 messages, parse segments and fields, and explore standardized field descriptions in your browser.</p>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
@@ -298,6 +382,57 @@ PV1|1|I|ICU^101^A|||||||SUR||||||||S|||||||||||||||||||||||||20231015`;
                 </div>
               </div>
             )}
+            <section className="mt-10 bg-white rounded-lg shadow p-6">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">About this HL7 v2.x Parser</h2>
+              <p className="text-gray-700 mb-4">
+                This free, browser‑based HL7 viewer parses HL7 v2.x messages (ADT, ORM, ORU, and more) into readable segments and fields, complete with human‑friendly descriptions. No data leaves your device.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-2">Key Features</h3>
+                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                    <li>Zero‑install, client‑side HL7 message parsing</li>
+                    <li>Segment and field descriptions with component breakdowns</li>
+                    <li>Copy segments and expand/collapse controls</li>
+                    <li>Mobile‑friendly UI with keyboard support</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-800 mb-2">Use Cases</h3>
+                  <ul className="list-disc list-inside text-gray-700 space-y-1">
+                    <li>Debugging HL7 integrations and interfaces</li>
+                    <li>Learning HL7 v2.x structure and semantics</li>
+                    <li>Exploring ADT, ORU, ORM, and other message types</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-6">
+                <h3 className="font-semibold text-gray-800 mb-2">FAQ</h3>
+                <div className="space-y-2">
+                  <details className="border border-gray-200 rounded">
+                    <summary className="cursor-pointer px-3 py-2 font-medium">What is HL7 v2.x?</summary>
+                    <div className="px-3 pb-3 text-gray-700">
+                      HL7 v2.x is a widely used healthcare messaging standard for exchanging clinical and administrative data between systems such as EHRs, labs, and billing platforms.
+                    </div>
+                  </details>
+                  <details className="border border-gray-200 rounded">
+                    <summary className="cursor-pointer px-3 py-2 font-medium">Does this tool send my data to a server?</summary>
+                    <div className="px-3 pb-3 text-gray-700">
+                      No. Parsing happens entirely in your browser. Your HL7 message never leaves your device.
+                    </div>
+                  </details>
+                  <details className="border border-gray-200 rounded">
+                    <summary className="cursor-pointer px-3 py-2 font-medium">Which messages are supported?</summary>
+                    <div className="px-3 pb-3 text-gray-700">
+                      Common HL7 v2.x messages including ADT, ORU, ORM, and others. Field descriptions are included for major segments.
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <div className="mt-6">
+                <a href="https://github.com/chaitanyabhasme/hl7_parser" className="text-indigo-600 hover:text-indigo-800 underline">View source on GitHub</a>
+              </div>
+            </section>
           </div>
         </div>
       );
